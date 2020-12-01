@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap');
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Spartan, sans-serif;
+}
+
+.bl{
+    border-color:#5BA4A4 ;
+}
+
+.hov1:hover {
+   color: #5BA4A4; 
+   text-decoration: underline;
+}
+
+.hov2:hover {
+    color: #5BA4A4;
+}
+
+.hov3:hover  {
+    background-color: #2C3A3A !important; 
+}
+
+.hov4:hover {
+    color: white !important;
+    background-color:#5BA4A4 !important;
+}
+
