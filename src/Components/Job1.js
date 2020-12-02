@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Job1 = ({ company, logo, nnew, featured, position, role, level, postedAt, contract, location, languages, tools }) => {
+const Job1 = ({ job:{ company, logo, nnew, featured, position, role, level, postedAt, contract, location, languages, tools}, handleTagClick }) => {
 
   const lt=[role, level]
   if(languages) {
@@ -12,7 +12,7 @@ const Job1 = ({ company, logo, nnew, featured, position, role, level, postedAt, 
   
   return (
     <div className={`flex flex-column ma3 mh4 mb5 shadow-5 f7 
-                   bg-white pa2 pl3 br3 mb1-ns flex-wrap-m flex-row-ns  
+                   bg-white pa2 pl3 br3 mb1-ns flex-wrap-m flex-row-ns mh6-l  
                    ${featured && 'bl bw3'}`}>
 
       <div className='flex-ns items-center-ns'>
@@ -38,8 +38,9 @@ const Job1 = ({ company, logo, nnew, featured, position, role, level, postedAt, 
       <div className='flex flex-wrap items-center-ns mt2 pt2 bt b--silver ml-auto-ns b--none-ns'>
         {lt ? lt.map((i) => (
           <span
+          onClick={()=>handleTagClick(i) }
             key={i}
-            className='ma2 pa2 b br3 pointer hov4'
+            className='ma2 pa2 b br3 pointer hov4 grow'
             style={{color:'#5BA4A4', backgroundColor: '#EFFAFA'}}>
               {i}
           </span>)) :''}

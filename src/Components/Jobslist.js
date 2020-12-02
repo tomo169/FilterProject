@@ -1,29 +1,38 @@
 import React from 'react';
 import Job from './Job1';
-//import Data from '../data.json';
 
-const Jobslist = ({ jobs }) => {
+
+
+const Jobslist = ({ jobs, filters, setFilters }) => {
+  const filterFun= ({ role, level, tools, languages }) => {
+    
+    if (filters.length === 0) {
+      return true;
+    }
+
+  const lt=[role, level]
+  if(languages) {
+    lt.push(...languages);
+  }
+  if(tools) {
+    lt.push(...tools);
+  }
+  return filters.every(filter => lt.includes(filter));
+}
+  const handleTagClick = (tag) => {
+    if (filters.includes(tag)) return;
+    setFilters([...filters, tag]);
+  }
+  
+  const filterdJobs = jobs.filter(filterFun)
+
   return (
     <div>
       {
-          jobs.map((job, i) => {
+          filterdJobs.map((job, i) => {
               return (
-                  <Job
-                  key={i}
-                  company={jobs[i].company}
-                  logo={jobs[i].logo}
-                  nnew={jobs[i].nnew}
-                  featured={jobs[i].featured}
-                  position={jobs[i].position}
-                  role={jobs[i].role}
-                  level={jobs[i].level}
-                  postedAt={jobs[i].postedAt}
-                  contract={jobs[i].contract}
-                  location={jobs[i].location}
-                  languages={jobs[i].languages}
-                  tools={jobs[i].tools}
-                  />
-                  
+                  <Job job={job} key={job.id} 
+                  handleTagClick={handleTagClick} />  
               );
           })
       }
