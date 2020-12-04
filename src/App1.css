@@ -31,3 +31,8 @@ body {
     background-color:#5BA4A4 !important;
 }
 
+.scroll {
+    overflow: scroll;
+    height: 700px;
+}
+

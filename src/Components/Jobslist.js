@@ -4,6 +4,7 @@ import Job from './Job1';
 
 
 const Jobslist = ({ jobs, filters, setFilters }) => {
+  
   const filterFun= ({ role, level, tools, languages }) => {
     
     if (filters.length === 0) {
@@ -19,7 +20,7 @@ const Jobslist = ({ jobs, filters, setFilters }) => {
   }
   return filters.every(filter => lt.includes(filter));
 }
-  const handleTagClick = (tag) => {
+  const clickedFilter = (tag) => {
     if (filters.includes(tag)) return;
     setFilters([...filters, tag]);
   }
@@ -29,10 +30,10 @@ const Jobslist = ({ jobs, filters, setFilters }) => {
   return (
     <div>
       {
-          filterdJobs.map((job, i) => {
+          filterdJobs.map((job) => {
               return (
                   <Job job={job} key={job.id} 
-                  handleTagClick={handleTagClick} />  
+                  clickedFilter={clickedFilter} />  
               );
           })
       }
