@@ -20,7 +20,8 @@ useEffect(() => {
   return  (
     <div className="w-100"> 
       <header className='mb5 ' style={{backgroundColor: '#5BA4A4'}}>
-        <img className='w-100 ' src='./images/bg-header-desktop.svg' alt='' />
+        <img className='w-100 h4 bgm' src='./images/bg-header-mobile.svg' alt='' />
+        <img className='w-100 h4 bgd' src='./images/bg-header-desktop.svg' alt='' />
       </header> 
       <Filterbar filters={filters} setFilters={setFilters} />
       <Scroll>
