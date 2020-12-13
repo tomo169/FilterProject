@@ -11,7 +11,7 @@ const Filterbar = ({ filters, setFilters }) => {
     }
 
     return (
-       <div>
+       <div className=''>
            {filters.length > 0 && (
             <div className='flex flex-wrap relative nt6 ma3 mh4 mb5 pa2 items-center shadow-5 bg-white br3  mh6-l'>
                 {filters.map((filter) => (
