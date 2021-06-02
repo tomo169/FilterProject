@@ -25,7 +25,7 @@ const Job1 = ({ job:{ company, logo, nnew, featured, position, role, level, post
 
           {nnew && <span
           className=' f7 br-pill pa1 ml2 tc' style={{color:'white', backgroundColor: '#5BA4A4'}}
-          >NEW!</span>} 
+          >NEW!!</span>} 
 
           {featured && <span
           className='f7 br-pill pa1 ml2' style={{color:'white', backgroundColor: '#2C3A3A'}}
